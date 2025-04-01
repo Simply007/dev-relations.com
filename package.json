@@ -1,5 +1,6 @@
 {
-  "name": "dev-templates",
+  "name": "dev-relations.com",
+  "description": "Dev Relations (dev-relations.com) website",
   "version": "1.0.0",
   "private": true,
   "author": {
