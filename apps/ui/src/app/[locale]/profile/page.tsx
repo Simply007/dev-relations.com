@@ -17,13 +17,21 @@ export default async function ProfilePage({ params }: PageProps) {
 
   return (
     <section>
-      <h1 className="text-xl">
-        Hello, <strong>{session?.user.name} ❤️</strong>
-      </h1>
-      <br />
-      <Button asChild variant="outline">
-        <Link href="/">Go home</Link>
-      </Button>
+      <div>
+        <h1 className="text-xl">
+          Hello, <strong>{session?.user.name} ❤️</strong>
+        </h1>
+        <h2 className="text-lg">Profile information</h2>
+        <div className="profile-info">
+          <p>
+            <strong>Email:</strong> {session?.user.email}
+          </p>
+        </div>
+        <br />
+        <Button asChild variant="outline">
+          <Link href="/">Go home</Link>
+        </Button>
+      </div>
     </section>
   )
 }

@@ -27,6 +27,13 @@ export default ({ env }) => {
 
     "users-permissions": {
       config: {
+        register: {
+          allowedFields: [
+            // https://forum.strapi.io/t/user-permission-problem-with-v5/47190
+            "firstName",
+            "lastName",
+          ],
+        },
         jwt: {
           expiresIn: "30d", // this value is synced with NextAuth session maxAge
         },

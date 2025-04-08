@@ -34,8 +34,8 @@ export function RegisterForm() {
       password: string
       firstName: string
       lastName: string
-    }) =>
-      Strapi.fetchAPI(
+    }) => {
+      return Strapi.fetchAPI(
         `/auth/local/register`,
         undefined,
         {
@@ -44,7 +44,8 @@ export function RegisterForm() {
           next: { revalidate: 0 },
         },
         { omitAuthorization: true }
-      ),
+      )
+    },
   })
 
   const form = useForm<z.infer<FormSchemaType>>({
@@ -55,6 +56,7 @@ export function RegisterForm() {
       email: "",
       password: "",
       passwordConfirmation: "",
+      username: "",
       firstName: "",
       lastName: "",
     },
@@ -63,7 +65,7 @@ export function RegisterForm() {
   async function onSubmit(values: z.infer<FormSchemaType>) {
     mutate(
       {
-        username: values.email,
+        username: values.username || values.email,
         email: values.email,
         password: values.password,
         firstName: values.firstName,
@@ -99,10 +101,17 @@ export function RegisterForm() {
     // This message is relevant if system requires email verification
     // If user is `confirmed` immediately, this message is not needed
     // and user should be redirected to sign in page
+
+    // For no verification - hardocded
+    const EMAIL_VERIFICATION = false
+    const headerText = EMAIL_VERIFICATION
+      ? t("checkEmail")
+      : t("justRegistered")
+
     return (
       <Card className="m-auto w-[400px]">
         <CardHeader>
-          <h2 className="mx-auto">{t("checkEmail")}</h2>
+          <h2 className="mx-auto">{headerText}</h2>
         </CardHeader>
         <CardContent>
           <Link
@@ -128,6 +137,7 @@ export function RegisterForm() {
         </CardHeader>
         <CardContent>
           <AppForm form={form} onSubmit={onSubmit} id={registerFormName}>
+            <AppField name="email" type="text" required label={t("email")} />
             <AppField
               name="firstName"
               type="text"
@@ -140,7 +150,7 @@ export function RegisterForm() {
               required
               label={t("lastName")}
             />
-            <AppField name="email" type="text" required label={t("email")} />
+            <AppField name="username" type="text" label={t("username")} />
             <AppField
               name="password"
               type="password"
@@ -185,8 +195,9 @@ const RegisterFormSchema = z
     email: z.string().email(),
     password: z.string().min(PASSWORD_MIN_LENGTH),
     passwordConfirmation: z.string().min(PASSWORD_MIN_LENGTH),
-    firstName: z.string().min(1),
-    lastName: z.string().min(1),
+    firstName: z.string().min(3),
+    lastName: z.string().min(3),
+    username: z.string().optional(),
   })
   .superRefine((data, ctx) => {
     if (data.password !== data.passwordConfirmation) {

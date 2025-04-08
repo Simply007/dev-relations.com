@@ -18,7 +18,6 @@
       "imageUrl": "DEV-TEMPLATE-SEO"
     }
   },
-
   "general": {
     "noOptionsAvailable": "Žádné možnosti k dispozici",
     "search": "Vyhledat",
@@ -28,7 +27,6 @@
     "submitForm": "Odeslat",
     "saveChanges": "Uložit změny"
   },
-
   "tables": {
     "previousPage": "Předchozí stránka",
     "nextPage": "Další stránka",
@@ -40,7 +38,6 @@
     "descending": "Sestupně",
     "noData": "Žádná data"
   },
-
   "navbar": {
     "account": "Účet",
     "actions": {
@@ -49,7 +46,6 @@
       "signIn": "Přihlásit se"
     }
   },
-
   "comps": {
     "fileInput": {
       "label": "Vybrat soubor",
@@ -72,7 +68,6 @@
       "confirmClose": "Chcete zavřít dialog? Ztratíte tím všechny rozpracované změny."
     }
   },
-
   "errors": {
     "global": {
       "title": "Nastala neznámá chyba",
@@ -80,24 +75,20 @@
       "invalidContent": "Tenhle obsah se nepodařilo načíst",
       "somethingWentWrong": "Něco se pokazilo 🥺"
     },
-
     "notFound": {
       "title": "Stránka nenalezena",
       "description": "Stránka, kterou hledáte, nebyla nalezena.",
       "solution": "Zkontrolujte prosím, zda jste zadali správnou adresu anebo se vraťte na úvodní stránku.",
       "redirect": "Přejít na úvodní stránku"
     },
-
     "forms": {
       "errorsInForm": "Formulář obsahuje chyby",
       "checkFormForErrors": "Zkontrolujte prosím, zda nechybí žádné hodnoty"
     },
-
     "zodValidation": {
       "invalid_type": "Požadovaný typ je {expected}, zadán byl {received}",
       "invalid_type_received_undefined": "Pole je požadované",
       "invalid_literal": "Nesprávná hodnota, očekává sa {expected}",
-
       "invalid_string": {
         "regex": "Nesprávný formát"
       },
@@ -131,7 +122,6 @@
         "phoneNumber": "Toto pole musí obsahovat 9 čísel"
       }
     },
-
     "http": {
       "400": "Něco se pokazilo. Zkuste to prosím znovu nebo kontaktujte podporu.",
       "401": "Platnost přihlášení vypršela. Přihlaste se prosím znovu.",
@@ -145,7 +135,6 @@
       "503": "Server není dostupný. Zkuste to prosím znovu nebo kontaktujte podporu"
     }
   },
-
   "contactForm": {
     "name": "Jméno a Přijmení",
     "namePlaceholder": "Jan Novák",
@@ -158,7 +147,6 @@
     "error": "Při odesílání formuláře došlo k chybě, zkuste to prosím znovu",
     "gdprLink": "Informace o zpracování osobních údajů"
   },
-
   "auth": {
     "signIn": {
       "status": {
@@ -177,7 +165,6 @@
       "forgotPassword": "Zapomenuté heslo",
       "createAccount": "Vytvořit účet"
     },
-
     "register": {
       "status": {
         "fail": "Registrace selhala",
@@ -191,6 +178,7 @@
       },
       "header": "Registrace",
       "description": "Vytvořte si účet pro přístup do systému.",
+      "username": "Uživatelské jméno",
       "firstName": "Jméno",
       "lastName": "Příjmení",
       "email": "Zadejte svou e-mailovou adresu",
@@ -199,10 +187,10 @@
       "submit": "Vytvořit účet",
       "forgotPassword": "Již máte účet? Přihlaste se.",
       "checkEmail": "Postupujte podle instrukcí ve vašem e-mailu pro potvrzení e-mailové adresy.",
+      "justRegistered": "Jste zaregistrován! Přihlašte se.",
       "signInLinkLinkDescription": "Již máte účet?",
       "signInLink": "Přihlásit se"
     },
-
     "changePassword": {
       "errors": {
         "The provided current password is invalid": "Současné heslo se neshoduje"
@@ -215,7 +203,6 @@
       "confirmPassword": "Potvrdit nové heslo",
       "submit": "Změnit heslo"
     },
-
     "accountActivation": {
       "successfullySet": "Účet byl úspěšně aktivován. Můžete se přihlásit.",
       "errors": {
@@ -231,7 +218,6 @@
       "password": "Nové heslo",
       "confirmPassword": "Potvrdit heslo"
     },
-
     "resetPassword": {
       "header": "Resetování hesla",
       "description": "Zvolte si nové heslo, které budete používat k přihlašování.",
@@ -239,7 +225,6 @@
       "password": "Nové heslo",
       "confirmPassword": "Potvrdit heslo"
     },
-
     "forgotPassword": {
       "passwordChangeEmailSent": "Byl vám zaslán e-mail s instrukcemi pro obnovení hesla.",
       "header": "Zapomenuté heslo",

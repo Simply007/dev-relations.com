@@ -191,6 +191,7 @@
       },
       "header": "Registration",
       "description": "Create an account to access the system.",
+      "username": "Username",
       "firstName": "First name",
       "lastName": "Last name",
       "email": "E-mail address",
@@ -199,6 +200,7 @@
       "submit": "Create account",
       "forgotPassword": "Already have an account? Sign in.",
       "checkEmail": "Follow instructions in your email to confirm your email address.",
+      "justRegistered": "You are registered! Go ahead and sign in.",
       "signInLinkLinkDescription": "Already have an account?",
       "signInLink": "Sign in"
     },

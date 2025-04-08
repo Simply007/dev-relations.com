@@ -739,6 +739,10 @@ export interface PluginReviewWorkflowsWorkflow
       Schema.Attribute.Required &
       Schema.Attribute.Unique
     publishedAt: Schema.Attribute.DateTime
+    stageRequiredToPublish: Schema.Attribute.Relation<
+      "oneToOne",
+      "plugin::review-workflows.workflow-stage"
+    >
     stages: Schema.Attribute.Relation<
       "oneToMany",
       "plugin::review-workflows.workflow-stage"
@@ -1013,7 +1017,6 @@ export interface PluginUsersPermissionsUser
   }
   options: {
     draftAndPublish: false
-    timestamps: true
   }
   attributes: {
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>
@@ -1026,6 +1029,16 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6
+      }>
+    firstName: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3
+      }>
+    lastName: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3
       }>
     locale: Schema.Attribute.String & Schema.Attribute.Private
     localizations: Schema.Attribute.Relation<

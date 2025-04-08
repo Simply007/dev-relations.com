@@ -27,7 +27,6 @@ export const authOptions: NextAuthOptions = {
         if (!credentials?.email || !credentials.password) {
           return null
         }
-
         return (
           Strapi.fetchAPI(
             `/auth/local`,
